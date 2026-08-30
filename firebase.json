@@ -1,0 +1,10 @@
+{
+  "//": "Firebase CLI deploy manifest. Run: npx firebase-tools deploy --only firestore:rules,firestore:indexes,storage --project project-12-84b49",
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
