@@ -1,8 +1,0 @@
-P12
-Personal Ledger Manager
-The four required items
-
-Let the user set a monthly salary and add expenses, including by uploading a photo of a bill or receipt. Read the amount, date and shop name from the image, show what was read so the user can check it, and let them correct any field before saving.
-Show a monthly dashboard: total spent against salary, a breakdown by category, the largest expenses, and the change compared to last month.
-Produce a forecast and written insights from the actual numbers: expected spending for the rest of the month, expected money left or short at month end, and at least three insights that name specific categories and amounts rather than giving general advice.
-Let the user create savings pockets for specific items, each with a name, a target amount, item details and a monthly contribution. For each pocket show an expected completion date based on the forecast, and what a DPS at a rate you state would return over that time.
