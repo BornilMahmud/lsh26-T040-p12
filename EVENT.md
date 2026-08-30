@@ -2,9 +2,9 @@
 
 - **Team ID:** `LSH26-T040`
 - **Problem ID:** `P12`
-- **Repository:** `lsh26-T040-p12`
+- **Repository:** `lsh26-t040-p12`
 - **Event start code:** `LSH26-8490-C900`
-- **Repository created before release:** Yes / No
+- **Repository created before release:** No
 
 ## Material present before 6:00 PM
 
