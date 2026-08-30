@@ -52,8 +52,8 @@ Sample data can be loaded directly from the demo data interface (`src/data/demoD
 ### Setup
 
 ```bash
-git clone [https://github.com/BornilMahmud/lsh26-t040-p12.git](https://github.com/BornilMahmud/lsh26-t040-p12.git)
-cd lsh26-t040-p12
+git clone https://github.com/armanhossen-dev/lsh26-T040-p12.git
+cd lsh26-T040-p12
 npm install
 cp .env.example .env
 npm run dev
