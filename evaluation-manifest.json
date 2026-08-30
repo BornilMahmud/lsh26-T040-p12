@@ -1,58 +1,86 @@
 {
   "team_id": "LSH26-T040",
   "problem_id": "P12",
-  "repository_name": "lsh26-T040-p12",
-  "live_url": "https://example.com",
+  "repository_name": "lsh26-t040-p12",
+  "live_url": "https://lsh26-t040-p12.vercel.app",
   "demo_video_url_optional": "",
   "event_start_code": "LSH26-8490-C900",
   "repository_created_before_release": false,
   "pre_event_materials": [],
   "sample_data": {
     "loads_published_fixture": true,
-    "method": "file upload",
-    "reset_instructions": "Explain how judges can restore the initial data."
+    "method": "API fetch and pre-populated demo data interface",
+    "reset_instructions": "Judges can restore initial sample data via the demo data module (src/data/demoData.ts and src/data/testCases.ts) or reset settings screen."
   },
-  "problem_solving_method": "Briefly explain the approach and why the team chose it.",
+  "problem_solving_method": "Architected a modular analytical core (src/analytics/) handling forecasts, DPS formulas, and insights completely independent of UI components, paired with client-side/worker-assisted OCR processing (src/services/receiptParser.ts) for non-blocking receipt image parsing.",
   "requirements": {
     "R1": {
       "status": "complete",
-      "evidence": "Page, route, feature or source-file path"
+      "evidence": "/expenses, /onboarding, src/services/receiptParser.ts, src/features/expenses/ExpenseForm.tsx"
     },
     "R2": {
       "status": "complete",
-      "evidence": "Page, route, feature or source-file path"
+      "evidence": "/dashboard, src/pages/Dashboard.tsx, src/analytics/summary.ts"
     },
     "R3": {
-      "status": "partial",
-      "evidence": "Explain what works and what remains"
+      "status": "complete",
+      "evidence": "/forecast, /insights, src/analytics/forecastEngine.ts, src/analytics/insightEngine.ts"
     },
     "R4": {
-      "status": "not_attempted",
-      "evidence": "Not attempted"
+      "status": "complete",
+      "evidence": "/savings, src/pages/Savings.tsx, src/analytics/pocketCalculator.ts, src/analytics/dpsCalculator.ts"
     }
   },
   "team_members": [
     {
-      "registered_name": "<MEMBER NAME>",
-      "github_username": "<GITHUB USERNAME>",
-      "major_contribution": "Brief description of personal contribution",
+      "registered_name": "Md. Arman Hossen Ripon",
+      "github_username": "armanhossen-dev",
+      "major_contribution": "Frontend Developer responsible for AppShell, UI design components, expense forms, and main page layouts.",
       "evidence_paths_or_commits": [
-        "src/example-file",
-        "<commit SHA if helpful>"
+        "src/components/",
+        "src/pages/",
+        "src/styles.css"
+      ]
+    },
+    {
+      "registered_name": "Bornil Mahmud",
+      "github_username": "BornilMahmud",
+      "major_contribution": "Lead Backend Developer responsible for analytical engines, receipt OCR worker logic, repository layers, and Vitest test suites.",
+      "evidence_paths_or_commits": [
+        "src/analytics/",
+        "src/services/",
+        "worker/",
+        "vitest.config.ts"
       ]
     }
   ],
   "major_design_decisions": [
-    "Decision and short reason"
+    "Decoupled Analytics Engine: Isolated calculation logic into pure TypeScript files to enable 100% unit test coverage independent of UI rendering.",
+    "Fail-Safe OCR Pipeline: Implemented editable review modals and client-side Workers to allow manual verification/correction of extracted receipt details."
   ],
   "known_limitations": [
-    "Known limitation or unfinished behaviour"
+    "OCR extraction accuracy relies on image lighting and clarity; manual verification/editing may be required for low-resolution receipt photos."
   ],
   "ai_tools_used": [
     {
-      "tool": "<TOOL NAME>",
-      "used_for": "What the tool helped with",
-      "how_output_was_verified": "How the team checked the result"
+      "tool": "ChatGPT",
+      "used_for": "Planning, debugging, documentation, and architecture optimization.",
+      "how_output_was_verified": "Reviewed code manually, validated calculations, and tested output through application flows."
+    },
+    {
+      "tool": "Claude",
+      "used_for": "Coding assistance, debugging, and review.",
+      "how_output_was_verified": "Performed code reviews, integrated generated snippets, and ran Vitest suites."
+    },
+    {
+      "tool": "DeepSeek",
+      "used_for": "Coding and technical problem-solving assistance.",
+      "how_output_was_verified": "Verified algorithm logic step-by-step and ran manual edge-case tests."
+    },
+    {
+      "tool": "Genspark AI",
+      "used_for": "Research, implementation ideas, and development productivity.",
+      "how_output_was_verified": "Tested conceptual recommendations in isolated modules before integrating into production code."
     }
   ],
   "licenses_file": "LICENSES.md",
